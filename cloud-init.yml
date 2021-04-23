@@ -1,0 +1,28 @@
+#cloud-config
+autoinstall:
+  apt:
+    geoip: true
+    preserve_sources_list: false
+    primary:
+    - arches: [amd64, i386]
+      uri: http://fr.archive.ubuntu.com/ubuntu
+    - arches: [default]
+      uri: http://ports.ubuntu.com/ubuntu-ports
+  identity: {hostname: ubuntu-carl, password: $6$TGnO1PQlj6k1DdbQ$rOdgTC64MANAk2                                                                                                                                                             b/wdBYRc5.u8AacYf/jfMUOaOODoKXbqIhO/AgL7DR2mS3K5WSkcOxmDeValTYN5rYShTsZ.,
+    realname: carl, username: carl}
+  keyboard: {layout: fr, toggle: null, variant: ''}
+  locale: en_US
+  network:
+    ethernets:
+      eth0: {dhcp4: true}
+    version: 2
+  ssh:
+    allow-pw: true
+    authorized-keys: [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCnTQwYT+/qwBAb4xpcC5DBplJsWljyZE6QbwixUB2FDQZpHCATDoeNI0L9QmxQetCH5uaNxnimRP45y+cKe92mKrKsMS3XJyhnSRHKMLft57MPKEOSv0PXi/r4u9AV2a6uvrOdpHHifGfAziT0H4vsSl7bbExU7lgU2wWdIWC/iMtiE12WzPZpfrt+j/1tdx2Y3mwOeRhVF+K/Fpnh8h/sKktijP3z1JCASD6PMGfwO34UglJ0ApeNRMUPbQyrAl1dkxgKHQeKrvR7Qufv3KW6eIiLHZIrbupf/FyZww4IfWMUH0huLHhAcYkOxRS7WNMVecHGZ3pNK8FY2OtC7wylBvkyApKw9jFCn+zBfed7HcRC/1tqqKGk2t9aOcZKsruZiGSoLiBQ+VqBsIBM4MW9zyAyjyD1267hlarFg6mM4zI+xeJzm5rrhBYkIGqVk93UK31vC9aYyAu5BzOkVHnW4hLS+KqVwqjnGuAvBXKRT39ZeVOzFEd1enryPnlr06bK+DQbG+kUFnpBnx5BNindEHzOOKIpILVIW4Vf05z6GJde5SqapjV6MeG1jnsAlHqUqhOlOQmmjSFGnAxuy8bnK72pwrz6LfoQcS6PvmUrjf9BpCpFL96vnok5w534nkkMrvdE3B14disBQC0es1PZnh1W7HIPD1eecFkfSn2o3w== root@localhost.localdomain]
+    install-server: true
+  storage:
+    layout:
+      name: lvm
+      match:
+        path: /dev/sda
+  version: 1
